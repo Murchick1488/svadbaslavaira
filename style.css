@@ -1,0 +1,101 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #ffe4ec, #e0f7fa);
+  color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Цветной список */
+.dresscode {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1em;
+}
+
+.dresscode li {
+  margin: 10px 0;
+}
+
+.color-swatch {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+}
+
+.blush {
+  background-color: #f9c5d1;
+}
+
+.lavender {
+  background-color: #e6e6fa;
+}
+
+.beige {
+  background-color: #f5f5dc;
+}
+
+.mint {
+  background-color: #c1f0dc;
+}
+
+/* Фоновые пионы */
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 300px;
+  height: 300px;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+body::before {
+  top: 0;
+  left: 0;
+  background-image: url('https://sun6-23.userapi.com/impf/c846523/v846523427/174d57/4yZdd4lyUoA.jpg?size=750x750&quality=96&sign=8555cfa99132a1dcad507a5ef646dd82&c_uniq_tag=uvqmxbVFcav2kOWCV7kHvo3gdk0M4T_FJBciXwE0scE&type=album');
+}
+
+body::after {
+  bottom: 0;
+  right: 0;
+  background-image: url('https://sun6-23.userapi.com/impf/c846523/v846523427/174d57/4yZdd4lyUoA.jpg?size=750x750&quality=96&sign=8555cfa99132a1dcad507a5ef646dd82&c_uniq_tag=uvqmxbVFcav2kOWCV7kHvo3gdk0M4T_FJBciXwE0scE&type=album');
+  transform: scaleX(-1);
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Анимация лепестков */
+.petal {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-image: url('https://sun6-23.userapi.com/impf/c846523/v846523427/174d57/4yZdd4lyUoA.jpg?size=750x750&quality=96&sign=8555cfa99132a1dcad507a5ef646dd82&c_uniq_tag=uvqmxbVFcav2kOWCV7kHvo3gdk0M4T_FJBciXwE0scE&type=album');
+  background-size: cover;
+  opacity: 0.6;
+  animation: fall linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10%) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
